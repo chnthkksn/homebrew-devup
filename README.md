@@ -36,7 +36,27 @@ sudo apt install mutagen openssh-client
 ## Build
 
 ```bash
-go build -o devup ./cmd/devup
+make build
+```
+
+## Install (system-wide)
+
+```bash
+sudo make install
+```
+
+By default this installs to `/usr/local/bin/devup`.
+
+To use a different prefix:
+
+```bash
+sudo make install PREFIX=/opt/devup
+```
+
+## Uninstall
+
+```bash
+sudo make uninstall
 ```
 
 ## Usage
@@ -75,10 +95,9 @@ Examples:
 Run tests:
 
 ```bash
-go test ./...
+make test
 ```
 
 ## License
 
 MIT. See [LICENSE](./LICENSE).
-

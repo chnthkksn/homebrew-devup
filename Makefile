@@ -1,0 +1,19 @@
+BINARY := devup
+CMD := ./cmd/devup
+PREFIX ?= /usr/local
+
+.PHONY: build test install uninstall
+
+build:
+	go build -o $(BINARY) $(CMD)
+
+test:
+	go test ./...
+
+install: build
+	install -d $(PREFIX)/bin
+	install -m 0755 $(BINARY) $(PREFIX)/bin/$(BINARY)
+
+uninstall:
+	rm -f $(PREFIX)/bin/$(BINARY)
+
