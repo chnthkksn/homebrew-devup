@@ -77,8 +77,13 @@ func run() int {
 		logError("Remote directory setup failed: %v", err)
 		return 1
 	}
+	ignores, err := mutagen.BuildIgnores(local)
+	if err != nil {
+		logError("Ignore rules error: %v", err)
+		return 1
+	}
 	logInfo("Creating Mutagen sync session")
-	if err := mutagen.CreateSession(sessionName, local, t, mutagen.DefaultIgnores); err != nil {
+	if err := mutagen.CreateSession(sessionName, local, t, ignores); err != nil {
 		logError("Mutagen session creation failed: %v", err)
 		return 1
 	}
