@@ -110,15 +110,24 @@ func run() int {
 }
 
 func printUsage() {
+	fmt.Fprintln(os.Stderr, "devup syncs a local folder to a remote host and opens an SSH dev session.")
+	fmt.Fprintln(os.Stderr, "")
 	fmt.Fprintln(os.Stderr, "Usage:")
 	fmt.Fprintln(os.Stderr, "  devup [user@]host:/remote/path [flags]")
 	fmt.Fprintln(os.Stderr, "")
+	fmt.Fprintln(os.Stderr, "Arguments:")
+	fmt.Fprintln(os.Stderr, "  [user@]host:/remote/path   Remote target (remote path must be absolute)")
+	fmt.Fprintln(os.Stderr, "")
 	fmt.Fprintln(os.Stderr, "Flags:")
-	fmt.Fprintln(os.Stderr, "  -p, --port     Port mapping")
-	fmt.Fprintln(os.Stderr, "  -l, --local    Local folder")
-	fmt.Fprintln(os.Stderr, "  --cmd          Remote startup command")
+	fmt.Fprintln(os.Stderr, "  -p, --port <mapping>   Port forward; repeatable. Formats: 3000 or 3000:3001")
+	fmt.Fprintln(os.Stderr, "  -l, --local <path>     Local folder to sync (default: current directory)")
+	fmt.Fprintln(os.Stderr, "  --cmd <command>        Command to run on remote after connect")
+	fmt.Fprintln(os.Stderr, "")
+	fmt.Fprintln(os.Stderr, "Examples:")
+	fmt.Fprintln(os.Stderr, "  devup ubuntu@host:/apps/api")
+	fmt.Fprintln(os.Stderr, "  devup ubuntu@host:/apps/api -p 3000 -p 5173:5174")
+	fmt.Fprintln(os.Stderr, "  devup ubuntu@host:/apps/api -l ~/projects/api --cmd \"npm run dev\"")
 }
 
 func logInfo(format string, a ...any) { fmt.Printf("[INFO] "+format+"\n", a...) }
 func logError(format string, a ...any) { fmt.Fprintf(os.Stderr, "[ERROR] "+format+"\n", a...) }
-
