@@ -62,7 +62,7 @@ sudo make uninstall
 ## Homebrew Tap
 
 Use the tap release guide in [docs/homebrew-tap.md](./docs/homebrew-tap.md).
-Formula template is in [packaging/homebrew/Formula/devup.rb](./packaging/homebrew/Formula/devup.rb).
+Formula template is in [Formula/devup.rb](./Formula/devup.rb).
 
 Install via Homebrew tap:
 

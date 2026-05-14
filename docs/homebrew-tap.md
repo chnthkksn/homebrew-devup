@@ -37,7 +37,7 @@ Copy the hash value.
 
 Use template from:
 
-- `packaging/homebrew/Formula/devup.rb`
+- `Formula/devup.rb`
 
 Replace:
 
@@ -60,4 +60,3 @@ brew test devup
 brew tap REPLACE_OWNER/devup
 brew install devup
 ```
-
