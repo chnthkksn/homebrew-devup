@@ -1,5 +1,5 @@
 # Binaries
-devup
+/devup
 dist/
 
 # Go
@@ -10,4 +10,3 @@ coverage.out
 .DS_Store
 .idea/
 .vscode/
-
