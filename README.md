@@ -59,6 +59,26 @@ sudo make install PREFIX=/opt/devup
 sudo make uninstall
 ```
 
+## Homebrew Tap
+
+Use the tap release guide in [docs/homebrew-tap.md](./docs/homebrew-tap.md).
+Formula template is in [packaging/homebrew/Formula/devup.rb](./packaging/homebrew/Formula/devup.rb).
+
+Install via Homebrew tap:
+
+```bash
+brew tap mutagen-io/mutagen
+brew tap chnthkksn/devup
+brew install devup
+```
+
+Uninstall:
+
+```bash
+brew uninstall devup
+brew untap chnthkksn/devup
+```
+
 ## Usage
 
 ```text
