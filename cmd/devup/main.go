@@ -95,7 +95,9 @@ func run() int {
 	sshArgs := sshutil.BuildArgs(ports, t, *remoteCmd, logInfo)
 	cmd := exec.CommandContext(ctx, "ssh", sshArgs...)
 	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	stderrFilter := sshutil.NewStderrFilter(os.Stderr)
+	defer stderrFilter.Close()
+	cmd.Stderr = stderrFilter
 	cmd.Stdin = os.Stdin
 
 	logInfo("SSH session connected")
