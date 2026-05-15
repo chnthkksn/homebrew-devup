@@ -1,8 +1,8 @@
 class Devup < Formula
   desc "Local-first remote development CLI for VPS workflows"
   homepage "https://github.com/chnthkksn/homebrew-devup"
-  url "https://github.com/chnthkksn/homebrew-devup/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "e6644460aaeeda5184dd47badd094cd3829621d4221e38ead9aa4d28ca80810d"
+  url "https://github.com/chnthkksn/homebrew-devup/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "f1b286f613fc9398c5b6e2028a5ea19612c0fddca090ff25210e345eac1497fa"
   license "MIT"
 
   depends_on "go" => :build
